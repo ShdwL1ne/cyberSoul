@@ -1,0 +1,369 @@
+.container::-webkit-scrollbar,
+select[name="Country"]::-webkit-scrollbar {
+  width: 5px;
+}
+
+.container::-webkit-scrollbar-track,
+select[name="Country"]::-webkit-scrollbar-track {
+  background: rgba(101, 100, 114, 0.5);
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.container::-webkit-scrollbar-thumb,
+select[name="Country"]::-webkit-scrollbar-thumb {
+  background: #623fa3;
+  border-radius: 5px;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding-left: 150px;
+  padding-right: 150px;
+  min-height: 91px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.profilesBox {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  max-width: 1010px;
+}
+
+.boxHeader {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.profileBox {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: flex-start;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.profileBox > div {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.profileImage {
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.profileImage > img {
+  width: 100px;
+  height: 100px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+}
+
+.choosenProfileImage {
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  border: 2px solid #6f6b82;
+}
+
+.choosenProfileName {
+  font-weight: bold;
+}
+
+.pr .profileImage > img {
+  height: 100px;
+  width: 100px;
+}
+
+input {
+  background: rgba(101, 100, 114, 0.5);
+  border: none;
+  border-radius: 5px;
+  min-height: 30px;
+  color: #ffffff;
+  opacity: 0.8;
+  padding-left: 10px;
+  height: 41px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+form > div > div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+form > div > div > div {
+  display: flex;
+  flex-direction: column;
+}
+
+select {
+  font-weight: 400;
+  background: rgba(101, 100, 114, 0.5);
+  border: none;
+  border-radius: 5px;
+  min-height: 30px;
+  color: #ffffff;
+  opacity: 0.8;
+  padding-left: 10px;
+  height: 41px;
+}
+
+select > option {
+  background: #6c5796;
+  border-radius: 5px;
+  min-height: 26px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: thin;
+  font-size: 10px;
+  line-height: 15px;
+  color: #ffffff;
+  opacity: 0.5;
+}
+
+.nameSurnameBox,
+.emailPhoneBox,
+.cityIndexBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.nameSurnameBox > div:nth-child(2),
+.emailPhoneBox > div:nth-child(2),
+.cityIndexBox > div:nth-child(2) {
+  margin-left: 20px;
+}
+
+.nameSurnameBox > div,
+.emailPhoneBox > div,
+.cityIndexBox > div {
+  flex-grow: 1;
+}
+
+.cardNameBox {
+  display: flex;
+}
+
+.cardNameBox > div {
+  margin-right: 10px;
+}
+
+.cardNameBox > div > label {
+  opacity: 1;
+}
+
+.cardNameBox > div > label > img {
+  opacity: 0.5;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label > img {
+  border: 3px solid transparent;
+}
+
+input[type="radio"]:checked + label > img {
+  border: 3px solid #3fa349;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+.cardTypeNumberBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.cardTypeNumberBox > div {
+  flex-grow: 1;
+}
+
+.cardNumberBox > input {
+  margin-top: 3px;
+}
+
+.nameBox {
+  width: 300px;
+}
+
+.surnameBox {
+  width: 300px;
+}
+
+.emailBox {
+  width: 340px;
+}
+
+.cityBox {
+  width: 380px;
+}
+
+.cardNumberBox {
+  width: 300px;
+}
+
+.buttonsBlock {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.acceptBtn {
+  width: 156px;
+  height: 35px;
+  background: #623fa3;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  border-radius: 10px;
+  border: none;
+}
+
+.deleteBtn {
+  width: 91px;
+  height: 35px;
+  border: 1px solid #FFFFFF;
+  background: transparent;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  margin-left: 20px;
+}
+
+.dateCVCBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.dateCVCBox > div:nth-child(1) {
+  min-width: 173px;
+  margin-right: 10px;
+}
+
+.dateCVCBox > div:nth-child(2) {
+  min-width: 173px;
+  margin-right: 10px;
+}
+
+.dateCVCBox > div:nth-child(3) {
+  flex-grow: 1;
+}
+
+.streetFlatBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.streetFlatBox > div:nth-child(1) {
+  flex-grow: 1;
+}
+
+.streetFlatBox > div:nth-child(2) {
+  margin-left: 20px;
+  width: 100px;
+}
+
+.isActive > div > img {
+  border: 2px solid #6f6b82;
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.2);
+}
+
+.deleteBtn:disabled,
+.acceptBtn:disabled {
+  background-color: grey;
+  color: white;
+  opacity: 0.5;
+  border: none;
+}
+
+.switchBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.switchBox > p {
+  margin-left: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: rgba(101, 100, 114, 0.5);
+  opacity: 1;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 300px;
+}
+
+.toggle:after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: white;
+  top: 1px;
+  left: 1px;
+  transition: all 0.5s;
+}
+
+.checkbox:checked + .toggle::after {
+  left: 20px;
+}
+
+.checkbox:checked + .toggle {
+  background: #623fa3;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.checkbox {
+  display: none;
+}
+
+.disabledbutton {
+  pointer-events: none;
+  opacity: 0.4;
+}

@@ -1,0 +1,40 @@
+{
+  "name": "app",
+  "version": "1.0.9",
+  "description": "CU Bot",
+  "main": "main.js",
+  "scripts": {
+    "electron": "electron .",
+    "dist": "electron-builder"
+  },
+  "author": "CyberSoulAIO",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "discord-webhook-node": "^1.1.8",
+    "express": "^4.17.2",
+    "node-fetch": "^2.6.7",
+    "puppeteer": "^13.7.0",
+    "puppeteer-extra": "^3.2.3",
+    "puppeteer-extra-plugin-stealth": "^2.9.0"
+  },
+  "devDependencies": {
+    "electron": "^16.2.8",
+    "electron-builder": "^5.5.0"
+  },
+  "build": {
+    "appId": "com.CyberSoulAIO.app",
+    "productName": "CyberSoul AIO",
+    "target": "NSIS",
+    "icon": "dist/logo.png",
+    "nsis": {
+      "installerIcon": "dist/logo.ico",
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false,
+      "createDesktopShortcut": true,
+      "deleteAppDataOnUninstall": true
+    },
+    "asar": true,
+    "asarUnpack": "node_modules/puppeteer/.local-chromium/**/*"
+  }
+}

@@ -1,0 +1,207 @@
+.container::-webkit-scrollbar,
+select::-webkit-scrollbar {
+  width: 5px;
+}
+
+.container::-webkit-scrollbar-track,
+select::-webkit-scrollbar-track {
+  background: rgba(101, 100, 114, 0.5);
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.container::-webkit-scrollbar-thumb,
+select::-webkit-scrollbar-thumb {
+  background: #623fa3;
+  border-radius: 5px;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: 91px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  overflow-y: auto;
+  max-height: 75vh;
+}
+
+.form {
+  margin-top: 18px;
+  display: flex;
+  width: 970px;
+}
+
+.form > div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.form > div > label {
+  margin-bottom: 5px;
+  font-weight: thin;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  opacity: 0.5;
+}
+
+.form > div > p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-top: 8px;
+}
+
+.form > div > select {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+  opacity: 0.8;
+  min-height: 30px;
+  padding-left: 15px;
+  appearance: none;
+}
+
+.form > div > input {
+  background: rgba(101, 100, 114, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  min-height: 30px;
+  color: #ffffff;
+  opacity: 0.8;
+  padding-left: 10px;
+}
+
+.form > div > input::-webkit-outer-spin-button,
+.form > div > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form > .idBox {
+  margin-left: 20px;
+  width: 30px;
+}
+
+.typeBox {
+  width: 140px;
+}
+
+.manufacturerBox {
+  width: 170px;
+}
+
+.modelBox {
+  width: 280px;
+}
+
+.priceBox {
+  width: 100px;
+}
+
+.profileBox {
+  width: 160px;
+}
+
+.form > div > select > option {
+  background: #6c5796;
+  border-radius: 5px;
+  min-height: 26px;
+}
+
+.taskBlock {
+  display: flex;
+  align-items: center;
+  width: 970px;
+  min-height: 40px;
+  margin-top: 10px;
+  background: rgba(101, 100, 114, 0.5);
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.taskBlock > div {
+  margin-right: 10px;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+
+.taskBlock > .idBox {
+  margin-left: 10px;
+  margin-right: 20px;
+  width: 30px;
+}
+
+.buttonsBlock {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.startBotBtn {
+  border: none;
+  padding: 7px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  width: 100px;
+}
+
+.taskSubDel {
+  display: flex;
+  width: 198px;
+  justify-content: space-between;
+}
+
+.subBtn {
+  border: none;
+  width: 92px;
+  background: #623fa3;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+}
+
+.delBtn {
+  border: 1px solid #a33f3f;
+  border-radius: 10px;
+  width: 86px;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: #a33f3f;
+}
+
+.isActive {
+  background-color: rgba(98, 63, 163, 0.7);
+}
+
+.startBotBtn:disabled,
+.subBtn:disabled,
+.delBtn:disabled {
+  background-color: grey;
+  color: white;
+  opacity: 0.5;
+}

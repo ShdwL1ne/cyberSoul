@@ -1,0 +1,143 @@
+.container {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+.profileBox {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.profileImage {
+  margin-right: 30px;
+}
+
+.profileImage > img {
+  width: 100px;
+  height: 100px;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.profileInfo > h3 {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.profileInfo > p {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+label {
+  font-size: 10px;
+  line-height: 15px;
+  color: #ffffff;
+  opacity: 0.5;
+  margin-bottom: 5px;
+}
+
+input {
+  box-sizing: border-box;
+  border: none;
+  background: rgba(101, 100, 114, 0.5);
+  border-radius: 5px;
+  width: 300px;
+  height: 41px;
+  padding-left: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-right: 20px;
+}
+
+input::placeholder {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+  opacity: 0.3;
+}
+
+button {
+  border: none;
+  width: 200px;
+  height: 41px;
+  background: #623fa3;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
+}
+
+.checkWH {
+  margin-left: 20px;
+  background: transparent;
+  border: 1px solid #fff;
+}
+
+.popUpBackrground {
+  position: absolute;
+  z-index: 98;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  justify-content: center;
+  align-items: center;
+}
+
+.popUp {
+  width: 400px;
+  height: 260px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(30px);
+  border-radius: 10px;
+  position: absolute;
+  margin: auto;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popUp > img {
+  margin-bottom: 20px;
+}
+
+.popUp > p {
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  font-weight: normal;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.popUp > button {
+  width: 160px;
+}

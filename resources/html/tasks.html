@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/mainMenu.css">
+    <link rel="stylesheet" href="../css/tasks.css">
+    <title>CyberSoul AIO</title>
+</head>
+<body>
+    <div class="foundation">
+        <div class="menuBlock">
+            <div class="miniLogo">
+                <img src="../images/minilogo.svg" alt="Logo" class="menuLogo">
+            </div>
+            <div class="profileBlock">
+                <a href="profile.html" class="linkBlock">
+                    <img src="../images/profile.svg" alt="Logo" class="menuLogo">
+                </a>
+            </div>
+            <div class="tasksBlock">
+                <a href="tasks.html" class="linkBlock">
+                    <img src="../images/tasks.svg" alt="Logo" class="menuLogo">
+                </a>
+            </div>
+            <div class="proxyBlock">
+                <a href="#" class="linkBlock">
+                    <img src="../images/proxy.svg" alt="Logo" class="menuLogo">
+                </a>
+            </div>
+            <div class="settingsBlock">
+                <a href="settings.html" class="linkBlock">
+                    <img src="../images/settings.svg" alt="Logo" class="menuLogo">
+                </a>
+            </div>
+        </div>
+        <div class="mainBlock">
+            <div class="nameBlock">
+                <div class="pageName">Tasks</div>
+                <div class="productName">CyberSoul AIO</div>
+                <div class="buttonBlock">
+                    <button class="exitBtn">
+                        <img src="../images/exit.svg" alt="X">
+                    </button>
+                    <button class="minBtn">
+                        <img src="../images/minimize.svg" alt="_">
+                    </button>
+                </div>
+            </div>
+            <div class="container">
+                <form class="form" name="userForm">
+                    <div class="idBox">
+                        <label class="idLabel">ID</label>
+                        <p>№</p>
+                    </div>
+                    <div class="typeBox">
+                        <label class="inputLabel">Type of Product</label>
+                        <select name="Type">
+                            <option value="Video Card">Video Card</option>
+                            <!-- <option value="Processor">Processor</option>
+                            <option value="playStation5">Play Station 5</option> -->
+                        </select>
+                    </div>
+                    <div class="manufacturerBox">
+                        <label class="inputLabel">Manufacturer</label>
+                        <select name="Manufacturer">
+                            <option value="⸻">⸻</option>
+                            <option value="Asus">Asus</option>
+                            <option value="MSI">MSI</option>
+                            <option value="PNY">PNY</option>
+                            <option value="GIGABYTE">GIGABYTE</option>
+                            <option value="XFX">XFX</option>
+                            <option value="Powercolor">Powercolor</option>
+                            <option value="Sapphire">Sapphire</option>
+                            <option value="Inno3D">Inno3D</option>
+                            <option value="ASRock">ASRock</option>
+                            <option value="Zotac">Zotac</option>
+                            <option value="AMD">AMD</option>
+                            <option value="Gainward">Gainward</option>
+                            <option value="EVGA">EVGA</option>
+                            <option value="Corporation">Corporation</option>
+                            <option value="Matrox">Matrox</option>
+                            <option value="Fujitsu">Fujitsu</option>
+                            <option value="Lenovo">Lenovo</option>
+                        </select>
+                    </div>
+                    <div class="modelBox">
+                        <label class="inputLabel">Model</label>
+                        <input onkeyup='checkParams()' type="text"  name="Model">
+                    </div>
+                    <div class="priceBox">
+                        <label class="inputLabel">Price(€)</label>
+                        <input onkeyup='checkParams()' type="number" name="Price" placeholder="123456">
+                    </div>
+                    <div class="profileBox">
+                        <label class="inputLabel">Profile</label>
+                        <select name="userID">
+                        </select>
+                    </div>
+                </form>
+                <div class="mainTaskBlock">
+                </div>
+                
+            </div>
+            <div class="buttonsBlock">
+                <div class="startBotBox">
+                    <button class="startBotBtn">
+                        Start Bot
+                    </button>
+                </div>
+                <div class="taskSubDel">
+                    <button class="subBtn" type="submit">Submit</button>
+                    <button class="delBtn" type="reset">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/tasks.js"></script>
+</body>
+</html>
