@@ -621,11 +621,11 @@ function parseFunc(order) {
         return 0
     }
 
-    const hook = new Webhook(`${whURL[0]}`)
+    const hook = new Webhook(`${whURL[0]}`);
 
-    if(TOKKEN[0] == "" || whURL[0] == "") {
-        return 0
-    }
+    // if(TOKKEN[0] == "" || whURL[0] == "") {
+    //     return 0
+    // }
 
     (async () => {
         try {
@@ -669,13 +669,13 @@ function parseFunc(order) {
                     }, {waitUntil: 'domconentloaded'})
                 }
     
-                await page.waitForTimeout(5000)
+                // await page.waitForTimeout(5000)
     
-                let checkCookiesDiv = await page.evaluate(() => {
-                    if(isNaN(+document.getElementById('gdpr_cookie_notice'))) {
-                        document.getElementById('main-content').removeChild(document.getElementById('gdpr_cookie_notice'))
-                    }
-                })
+                // let checkCookiesDiv = await page.evaluate(() => {
+                //     if(isNaN(+document.getElementById('gdpr_cookie_notice'))) {
+                //         document.getElementById('main-content').removeChild(document.getElementById('gdpr_cookie_notice'))
+                //     }
+                // })
     
                 await page.waitForSelector('#main-content > section > div > div.flex.flex-wrap.at__pdp__product-information > div:nth-child(2) > div:nth-child(4) > div > button')
     
