@@ -11,8 +11,8 @@ let win
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 puppeteer.use(StealthPlugin())
 
-const AdblockerPlugin = require('puppeteer-extra-plugin-adblocker')
-puppeteer.use(AdblockerPlugin({ blockTrackers: false }))
+// const AdblockerPlugin = require('puppeteer-extra-plugin-adblocker')
+// puppeteer.use(AdblockerPlugin({ blockTrackers: false }))
 
 async function getGoodsList(win) {
     // dialog.showMessageBox(win, {message: JSON.stringify(Object.keys(puppeteer))})
@@ -153,7 +153,7 @@ const createWindow = () => {
         roundedCorners: true,
         webPreferences: {
             preload: path.join(__dirname,"preload.js"),
-            devTools: true,
+            devTools: false,
             nodeIntegration: true,
             // sandbox: true
         }
@@ -627,7 +627,7 @@ function parseFunc(order) {
         try {
     
             let browser = await puppeteer.launch({
-                headless: false,
+                headless: true,
                 ignoreDefaultArgs: ['--disable-extensions'],
                 executablePath: puppeteer.executablePath().replace('app.asar', 'app.asar.unpacked')
             })
@@ -700,11 +700,12 @@ function parseFunc(order) {
                 .setTimestamp();
         
                 hook.send(embed);
-    
+                
                 await page.waitForSelector('button.at__go-to-cart')
     
                 // await page.waitForNavigation('domcontentloaded')
-    
+
+                console.log('click on button.at_go-to-cart')
                 await page.click('button.at__go-to-cart')
     
                 await page.waitForSelector('#UpperAmazonPayButton')
@@ -713,12 +714,14 @@ function parseFunc(order) {
     
                 // await page.waitForNavigation('domcontentloaded')
     
+                console.log('click on button.at__checkout_btn 1')
                 await page.click('button.at__checkout_btn')
                 
                 await page.waitForSelector('#non-dy-checkout > button')
     
                 await page.waitForTimeout(1000)
     
+                console.log('click on #non-dy-checkout > button')
                 await page.click('#non-dy-checkout > button')
     
                 await page.waitForSelector('input[name="BillingFormModel.FirstName')
@@ -743,6 +746,7 @@ function parseFunc(order) {
     
                 await page.type('input[name="BillingFormModel.EMail"]', `${profile[order.user].EMail}`, {delay: 100})
     
+                console.log('click on button.at__checkout__billingAddress__submit')
                 await page.click('button.at__checkout__billingAddress__submit')
     
                 // await page.waitForSelector('div.LanguageSwitch_button_flag__3ck2k')
