@@ -11,8 +11,8 @@ let win
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 puppeteer.use(StealthPlugin())
 
-// const AdblockerPlugin = require('puppeteer-extra-plugin-adblocker')
-// puppeteer.use(AdblockerPlugin({ blockTrackers: false }))
+const AdblockerPlugin = require('puppeteer-extra-plugin-adblocker')
+puppeteer.use(AdblockerPlugin({ blockTrackers: false }))
 
 async function getGoodsList(win) {
     // dialog.showMessageBox(win, {message: JSON.stringify(Object.keys(puppeteer))})
@@ -153,9 +153,9 @@ const createWindow = () => {
         roundedCorners: true,
         webPreferences: {
             preload: path.join(__dirname,"preload.js"),
-            devTools: false,
+            devTools: true,
             nodeIntegration: true,
-            sandbox: true
+            // sandbox: true
         }
     });
 
@@ -623,15 +623,11 @@ function parseFunc(order) {
 
     const hook = new Webhook(`${whURL[0]}`);
 
-    // if(TOKKEN[0] == "" || whURL[0] == "") {
-    //     return 0
-    // }
-
     (async () => {
         try {
     
             let browser = await puppeteer.launch({
-                headless: true,
+                headless: false,
                 ignoreDefaultArgs: ['--disable-extensions'],
                 executablePath: puppeteer.executablePath().replace('app.asar', 'app.asar.unpacked')
             })
@@ -641,7 +637,8 @@ function parseFunc(order) {
                 width: 1024, height: 720
             })
 
-            await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36');
+            await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 YaBrowser/22.11.3 Yowser/2.5 Safari/537.36');
+            // await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36');
 
             let profileJSON = fs.readFileSync(path.join(app.getPath("appData"), 'CyberSoulAIO', 'profile.json'), 'utf8')
 
@@ -657,19 +654,20 @@ function parseFunc(order) {
     
                 await page.waitForTimeout(5000)
     
-                let checkCountry = await page.evaluate( () => {
-                    return (/country=RU/gi).test(document.cookie)
-                }, {waitUntil: 'domcontentloaded'})
+                // let checkCountry = await page.evaluate( () => {
+                //     return (/country=RU/gi).test(document.cookie)
+                // }, {waitUntil: 'domcontentloaded'})
     
-                if(checkCountry) {
+
                     page.evaluate(() => {
                         window.scrollTo(0, 9e4)
-                        document.querySelectorAll('.Button_border-darkBlue__1t8b2')[1].click()
+                        document.querySelector("#main-content > footer > div.container.mx-auto.py-3 > div:nth-child(7) > div:nth-child(3) > div.w-full.py-2.md\\:pl-32.md\\:pr-32.lg\\:pl-0.lg\\:pr-0.md\\:flex > div.md\\:w-1\\/2.md\\:mr-4.md\\:order-0 > div > div > div > button").click()
                         document.querySelectorAll('.c-CountrySwitch__popover__item')[7].click()
                     }, {waitUntil: 'domconentloaded'})
-                }
+                
+                // await page.waitForTimeout(30000000)
     
-                // await page.waitForTimeout(5000)
+                await page.waitForTimeout(5000)
     
                 // let checkCookiesDiv = await page.evaluate(() => {
                 //     if(isNaN(+document.getElementById('gdpr_cookie_notice'))) {
@@ -679,7 +677,7 @@ function parseFunc(order) {
     
                 await page.waitForSelector('#main-content > section > div > div.flex.flex-wrap.at__pdp__product-information > div:nth-child(2) > div:nth-child(4) > div > button')
     
-                await page.waitForTimeout(5000)
+                // await page.waitForTimeout(5000)
     
                 try {
                     await page.click('#main-content > section > div > div.flex.flex-wrap.at__pdp__product-information > div:nth-child(2) > div:nth-child(4) > div > button')
@@ -711,21 +709,19 @@ function parseFunc(order) {
     
                 await page.waitForSelector('#UpperAmazonPayButton')
     
-                await page.waitForSelector('button.Button_orange__OYj2l')
+                await page.waitForSelector('button.at__checkout_btn')
     
                 // await page.waitForNavigation('domcontentloaded')
     
-                await page.click('button.Button_orange__OYj2l')
-    
-                await page.waitForSelector('div.LanguageSwitch_button_flag__3ck2k')
+                await page.click('button.at__checkout_btn')
                 
-                await page.waitForSelector('button.at__checkout_address')
+                await page.waitForSelector('#non-dy-checkout > button')
     
                 await page.waitForTimeout(1000)
     
-                await page.click('button.at__checkout_address')
+                await page.click('#non-dy-checkout > button')
     
-                await page.waitForSelector('div.css-1hwfws3')
+                await page.waitForSelector('input[name="BillingFormModel.FirstName')
     
                 await page.waitForTimeout(1000)
     
@@ -749,11 +745,11 @@ function parseFunc(order) {
     
                 await page.click('button.at__checkout__billingAddress__submit')
     
-                await page.waitForSelector('div.LanguageSwitch_button_flag__3ck2k')
+                // await page.waitForSelector('div.LanguageSwitch_button_flag__3ck2k')
     
                 await page.waitForTimeout(1000)
     
-                await page.waitForSelector('.c-radioInput__holder')
+                await page.waitForSelector('.c-PaymentList__item')
     
                 if(JSON.parse(profile[order.user].BankTransfer)) {
                     await page.evaluate(() => {
@@ -782,7 +778,7 @@ function parseFunc(order) {
     
                 await page.click('button.at__checkout__shipping_payment__submit')
     
-                await page.waitForSelector('div.LanguageSwitch_button_flag__3ck2k')
+                // await page.waitForSelector('div.LanguageSwitch_button_flag__3ck2k')
     
                 await page.waitForTimeout(2000)
     
@@ -805,7 +801,7 @@ function parseFunc(order) {
     
                 }, {waitForSelector: '#checkout-customsfee-info'})
     
-                await page.click('button.Button_orange__OYj2l')
+                await page.click('#order_submit')
 
                 await page.waitForTimeout(3000)
     
