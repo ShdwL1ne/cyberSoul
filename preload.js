@@ -85,7 +85,7 @@ contextBridge.exposeInMainWorld('app', {
     },
     exit() {
         return new Promise((res, rej) => {
-            ipcRenderer.invoke('EXIT').then(data => res(data))
+            ipcRenderer.invoke('SIMPLE_EXIT').then(data => res(data))
         })
     },
     minimize() {
